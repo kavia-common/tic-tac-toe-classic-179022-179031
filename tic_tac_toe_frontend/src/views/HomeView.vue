@@ -1,9 +1,18 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import TicTacToe from '@/components/TicTacToe.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
+  <main class="home">
+    <TicTacToe />
   </main>
 </template>
+
+<style scoped>
+.home {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+</style>

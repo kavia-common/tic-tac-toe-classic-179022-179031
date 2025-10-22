@@ -1,85 +1,98 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import TicTacToe from './components/TicTacToe.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="app-wrap">
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo">◎</div>
+        <div class="titles">
+          <h1>Tic Tac Toe</h1>
+          <p>Ocean Professional</p>
+        </div>
+      </div>
+    </header>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <main class="content">
+      <TicTacToe />
+    </main>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+    <footer class="app-footer">
+      <span>Made with Vue 3 + Vite</span>
+    </footer>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+:root {
+  --primary: #2563EB;
+  --secondary: #F59E0B;
+  --error: #EF4444;
+  --background: #f9fafb;
+  --surface: #ffffff;
+  --text: #111827;
+}
+
+.app-wrap {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: linear-gradient(180deg, rgba(59,130,246,0.08), rgba(249,250,251,1));
+}
+
+.app-header {
+  background: var(--surface);
+  border-bottom: 1px solid rgba(17,24,39,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .logo {
-  display: block;
-  margin: 0 auto 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 30%, rgba(37,99,235,0.9), rgba(37,99,235,0.6));
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(37,99,235,0.25);
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
+.titles h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+.ttitles p, .titles p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(17,24,39,0.6);
+}
+
+.content {
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.app-footer {
+  padding: 0.75rem 1rem;
   text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+  color: rgba(17,24,39,0.6);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(17,24,39,0.06);
+  background: var(--surface);
 }
 </style>
