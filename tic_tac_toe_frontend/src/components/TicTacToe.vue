@@ -478,7 +478,7 @@ select:focus {
   cursor: not-allowed;
   opacity: 0.96;
 }
-.cell[data-highlight="true"] {
+.cell[data-highlight='true'] {
   background: linear-gradient(180deg, rgba(245,158,11,0.18), rgba(255,255,255,0.4));
   border-color: rgba(245,158,11,0.6);
   box-shadow: 0 10px 24px rgba(245,158,11,0.25);

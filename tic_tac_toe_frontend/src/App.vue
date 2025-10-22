@@ -75,7 +75,7 @@ import TicTacToe from './components/TicTacToe.vue'
   font-size: 1.25rem;
   color: var(--text);
 }
-.ttitles p, .titles p {
+.titles p {
   margin: 0;
   font-size: 0.85rem;
   color: rgba(17,24,39,0.6);
